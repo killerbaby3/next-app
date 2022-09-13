@@ -1,4 +1,4 @@
-import fs from 'fs/promises';
+import fs from 'fs.promises';
 import path from 'path';
 export async function getStaticProps(){
     const filePath = path.join(process.cwd(),'data','dummy-backend.json');
@@ -6,14 +6,16 @@ export async function getStaticProps(){
     const data = JSON.parse(jData);
     return {
         props: {
-            products : data.products
-        }
+            products : data.products,
+            time: (new Date()).getTime()
+        },
+        revalidate:10
     };
 }
 export default function Section5(props){
-    const { products } = props;
+    const { products,time } = props;
     return <div>
-                <h1>Section 5</h1>
+                <h1>Section 5 --- {time}</h1>
                 <ul>
                     {products.map((p) => (
                         <li key={p.id}>{p.title}</li>
