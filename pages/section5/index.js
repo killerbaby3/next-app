@@ -21,5 +21,5 @@ export default function Section5(props){
                         <li key={p.id}>{p.title}</li>
                     ))}
                 </ul>
-            </div>;
+            </div>;    
 }
