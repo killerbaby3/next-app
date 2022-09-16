@@ -34,7 +34,7 @@ export default function Section5(props){
                 <h1>Section 5 --- {time}</h1>
                 <ul>
                     {products.map((p) => (
-                        <li key={p.id}><Link href={`/section5/${p.id}`}>{p.title}</Link></li>
+                        <li key={p.id}><Link href={`/products/section5/${p.id}`}>{p.title}</Link></li>
                     ))}
                 </ul>
             </div>;           
